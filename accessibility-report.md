@@ -106,7 +106,7 @@ With only `width` set, the browser keeps the photo's natural proportions.
 
 **Screenshot of the result**
 
-![Lighthouse accessibility score](images/lighthouse-score.png)
+![Lighthouse accessibility score](lighthouse-score.png)
 
 ---
 
