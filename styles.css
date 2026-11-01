@@ -1,0 +1,219 @@
+/* ===== Fonts ===== */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700&display=swap");
+
+/* ===== Design tokens ===== */
+:root {
+    /* Font families */
+    --font-heading: "Poppins", sans-serif;
+    --font-body: "Open Sans", sans-serif;
+
+    /* Type scale */
+    --font-xs: 0.75rem;    /* 12px */
+    --font-sm: 0.875rem;   /* 14px */
+    --font-base: 1rem;     /* 16px */
+    --font-lg: 1.125rem;   /* 18px */
+    --font-xl: 1.25rem;    /* 20px */
+    --font-2xl: 1.5rem;    /* 24px */
+    --font-3xl: 1.875rem;  /* 30px */
+    --font-4xl: 2.25rem;   /* 36px */
+
+    /* Colour system */
+    --color-primary: #1D4E89;
+    --color-secondary: #F28C28;
+    --color-background: #F7F9FC;
+    --color-text: #1F2933;
+    --color-muted: #5F6B7A;
+
+    /* Variations */
+    --color-primary-light: #DCE8F7;
+    --color-primary-dark: #123560;
+    --color-surface: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== Base ===== */
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-base);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+/* ===== Headings ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-text);
+    line-height: 1.2;
+    margin: 0 0 0.75em;
+}
+
+h1 { font-size: var(--font-4xl); font-weight: 700; color: var(--color-primary-dark); }
+h2 { font-size: var(--font-3xl); font-weight: 600; color: var(--color-primary); }
+h3 { font-size: var(--font-2xl); font-weight: 600; }
+h4 { font-size: var(--font-xl);  font-weight: 500; }
+h5 { font-size: var(--font-lg);  font-weight: 500; }
+h6 { font-size: var(--font-base); font-weight: 500; }
+
+/* ===== Text ===== */
+p {
+    font-size: var(--font-base);
+    margin-bottom: 1em;
+}
+
+small,
+.small-text {
+    font-size: var(--font-sm);
+    color: var(--color-muted);
+}
+
+/* ===== Links ===== */
+a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+    text-decoration-color: var(--color-secondary);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+/* ===== Buttons ===== */
+.btn,
+.card-button {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 2px solid var(--color-primary);
+    border-radius: 6px;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: var(--font-sm);
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover,
+.card-button:hover {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    color: #fff;
+}
+
+/* Accent button */
+.btn-secondary {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: var(--color-text);
+}
+
+.btn-secondary:hover {
+    background-color: #d97a1c;
+    border-color: #d97a1c;
+    color: var(--color-text);
+}
+
+/* ===== Card ===== */
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid var(--color-muted);
+    border-top: 4px solid var(--color-secondary);
+    border-radius: 8px;
+    background-color: var(--color-surface);
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.card h1 {
+    margin-bottom: 15px;
+    font-size: var(--font-2xl);
+}
+
+.card-button {
+    align-self: flex-start;
+    margin-top: 16px;
+}
+
+/* ===== Section backgrounds ===== */
+.section-light {
+    background-color: var(--color-primary-light);
+    padding: 40px 20px;
+}
+
+/* ===== Box model demo ===== */
+.container {
+    background-color: #cfe2ff;
+    padding: 10px;
+    max-width: 500px;
+}
+
+.box {
+    width: 200px;
+    box-sizing: content-box; /* shows the classic box model */
+}
+
+/* 1. Content */
+.content-box {
+    background-color: #ffd166;
+    height: 60px;
+}
+
+/* 2. Padding: bigger click area */
+.padding-box {
+    display: block;
+    padding: 30px;
+    background-color: #90e0a8;
+    color: #263238;
+    text-decoration: none;
+    margin-top: 10px;
+}
+.padding-box:hover {
+    background-color: #52b788;
+}
+
+/* 3. Border */
+.border-box {
+    border: 6px solid #d62828;
+    padding: 20px;
+    background-color: white;
+    margin-top: 10px;
+}
+
+/* 4. Margin: space between boxes */
+.margin-box {
+    border: 2px solid #333;
+    padding: 10px;
+    background-color: #f8c8dc;
+    margin: 40px 0;
+}
+
+/* ===== Debug exercise ===== */
+.broken-box {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 20px;
+    border: none;
+}
