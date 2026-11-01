@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The notebook beside the editor · Northline</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      --ink: #1c1915;
+      --muted: #5e574e;
+      --paper: #f3efe6;
+      --card: #fffdf8;
+      --line: #e3dac8;
+      --accent: #9a3412;
+      --accent-dark: #7c2d12;
+      --max: 72rem;
+      --measure: 40rem;
+    }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Segoe UI", system-ui, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    img { max-width: 100%; height: auto; }
+    a { color: var(--accent); }
+    a:hover { color: var(--accent-dark); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .wrap { width: min(var(--max), calc(100% - 2.5rem)); margin-inline: auto; }
+    .site-header { background: var(--paper); border-bottom: 1px solid var(--line); position: sticky; top: 0; }
+    .site-header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      min-height: 4.75rem;
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--ink);
+      text-decoration: none;
+      font-family: Georgia, "Palatino Linotype", Palatino, serif;
+      font-size: 1.45rem;
+      letter-spacing: -0.03em;
+    }
+    .logo-mark { width: 0.8rem; height: 0.8rem; background: var(--accent); flex: 0 0 auto; }
+    .site-header nav ul {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.35rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-header nav a { color: var(--ink); text-decoration: none; }
+    .site-header nav a:hover, .site-header nav a[aria-current="page"] { color: var(--accent); }
+    .site-header nav a[aria-current="page"] { box-shadow: inset 0 -2px 0 var(--accent); }
+    main { padding: 3rem 0 4.5rem; }
+    .kicker {
+      margin: 0 0 0.45rem;
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 {
+      font-family: Georgia, "Palatino Linotype", Palatino, serif;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    h1 { margin: 0 0 0.8rem; font-size: clamp(2.1rem, 4.5vw, 3.4rem); }
+    h2 { margin: 2rem 0 0.6rem; font-size: 1.6rem; }
+    h3 { margin: 0 0 0.35rem; font-size: 1.2rem; }
+    .post { max-width: var(--measure); }
+    .post p { margin: 0 0 1rem; }
+    .meta { margin: 0 0 1.25rem; color: var(--muted); }
+    .featured { margin: 0 0 1.6rem; }
+    .featured img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--line); background: #e7e0d2; }
+    figcaption { padding: 0.7rem 0.15rem 0; color: var(--muted); font-size: 0.95rem; }
+    .related { margin-top: 3.25rem; }
+    .related-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.9rem;
+      margin: 1rem 0 0;
+      padding: 0;
+    }
+    .related-list a {
+      display: block;
+      height: 100%;
+      padding: 1rem 1rem 1.15rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      color: inherit;
+      text-decoration: none;
+    }
+    .related-list a:hover { border-color: var(--accent); }
+    .related-list p { margin: 0; color: var(--muted); }
+    .site-footer { border-top: 1px solid var(--line); padding: 1.25rem 0 2rem; color: var(--muted); }
+    .site-footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .site-footer p { margin: 0; }
+    @media (max-width: 800px) {
+      .related-list { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      main { padding-top: 2rem; }
+      .site-header .wrap { flex-direction: column; align-items: flex-start; padding: 0.9rem 0; min-height: 0; }
+      .related-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html">
+        <span class="logo-mark" aria-hidden="true"></span>
+        Northline
+      </a>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="day-5-blog-post.html" aria-current="page">Journal</a></li>
+          <li><a href="day-4-gallery.html">Gallery</a></li>
+          <li><a href="day-1-five-tags.html">Notes</a></li>
+          <li><a href="day-3-contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article class="post">
+      <header>
+        <p class="kicker">Day 5 · Journal</p>
+        <h1>The notebook that sits beside the editor</h1>
+        <p class="meta">By Amina Cole · <time datetime="2026-03-12">March 12, 2026</time></p>
+      </header>
+
+      <figure class="featured">
+        <img src="images/jimmy%20unsplash.jpg" width="1200" height="675" alt="Notebook and working desk in soft natural light">
+        <figcaption>The notebook stays to the left of the keyboard.</figcaption>
+      </figure>
+
+      <p>I keep a paper notebook to the left of the keyboard. It is not a second system and it is not a brand. It is the place where a sentence can stay unfinished without a cursor blinking at it.</p>
+
+      <h2>What stays on paper</h2>
+      <p>Names of people I still owe a reply. A measurement I do not want to hunt for in a chat log. The ugly first version of a headline. Paper is patient with things that are not ready to be searched.</p>
+      <p>I date the top corner and leave the rest of the page alone. If a note matters tomorrow, it is still there. If it does not, I have not built a folder structure around it.</p>
+
+      <h2>A page that can be closed</h2>
+      <p>A file is always a little bit open. A notebook shuts. At the end of the day I write one line at the top of the next page: the first thing tomorrow needs. Then I close the cover and leave the studio.</p>
+      <p>That line is short on purpose. It has to be readable when I am half awake and the kettle is louder than the plan.</p>
+
+      <h2>Starting tomorrow</h2>
+      <p>The line I wrote last night is still there in the morning, in the same handwriting, unedited by an autosave. That is the whole method. The screen can have the finished version. The notebook keeps the start.</p>
+    </article>
+
+    <section class="related" aria-labelledby="related-title">
+      <h2 id="related-title">Related posts</h2>
+      <ul class="related-list">
+        <li>
+          <a href="day-1-five-tags.html">
+            <h3>A short field guide to quieter tags</h3>
+            <p>Eight elements that rarely make the first tutorial.</p>
+          </a>
+        </li>
+        <li>
+          <a href="day-4-gallery.html">
+            <h3>Six frames from the studio week</h3>
+            <p>Pier, desk, notebook, light, paper, and the March window.</p>
+          </a>
+        </li>
+        <li>
+          <a href="day-3-contact.html">
+            <h3>Where to find the studio</h3>
+            <p>The Pier Street address, the desk phone, and the public links.</p>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Northline · Daily Challenges</p>
+      <p><a href="index.html">All days</a></p>
+    </div>
+  </footer>
+</body>
+</html>
