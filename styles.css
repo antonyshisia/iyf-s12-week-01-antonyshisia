@@ -685,3 +685,346 @@ textarea:focus-visible {
     padding: 20px;
     border: none;
 }
+
+/* ===== CSS Day 1: Buttons ===== */
+.challenge-page {
+    min-height: 100vh;
+}
+
+.challenge-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 24px;
+    padding: 16px max(16px, calc((100% - 1100px) / 2));
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-primary-light);
+}
+
+.challenge-header > a {
+    color: var(--color-primary-dark);
+    font-family: var(--font-heading);
+    font-size: var(--font-xl);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.challenge-header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+}
+
+.challenge-header nav a {
+    font-size: var(--font-sm);
+}
+
+.challenge-header nav a[aria-current="page"] {
+    font-weight: 700;
+}
+
+.challenge-main {
+    width: min(100% - 32px, 1000px);
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.button-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-top: 28px;
+    padding: 24px;
+    border: 1px solid var(--color-primary-light);
+    border-radius: 12px;
+    background-color: var(--color-surface);
+}
+
+.demo-button {
+    display: inline-flex;
+    min-height: 46px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    font: 600 var(--font-base) / 1.2 var(--font-heading);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.demo-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
+}
+
+.demo-button-primary {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+}
+
+.demo-button-primary:hover {
+    border-color: var(--color-primary-dark);
+    background-color: var(--color-primary-dark);
+    color: var(--color-surface);
+}
+
+.demo-button-secondary {
+    border-color: var(--color-primary);
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+.demo-button-secondary:hover {
+    background-color: var(--color-primary-light);
+}
+
+.demo-button-danger {
+    border-color: #b42318;
+    background-color: #b42318;
+    color: var(--color-surface);
+}
+
+.demo-button-danger:hover {
+    border-color: #8f1b13;
+    background-color: #8f1b13;
+    color: var(--color-surface);
+}
+
+.demo-button-disabled,
+.demo-button-disabled:hover {
+    border-color: #d1d5db;
+    background-color: #e5e7eb;
+    box-shadow: none;
+    color: #6b7280;
+    cursor: not-allowed;
+    opacity: 0.75;
+    transform: none;
+}
+
+/* ===== CSS Day 2: Card component ===== */
+.demo-card {
+    max-width: 420px;
+    margin-top: 28px;
+    overflow: hidden;
+    border: 1px solid var(--color-primary-light);
+    border-radius: 12px;
+    background-color: var(--color-surface);
+    box-shadow: 0 2px 8px rgb(31 41 51 / 8%);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.demo-card:hover {
+    box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+    transform: translateY(-2px);
+}
+
+.demo-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.demo-card-content {
+    padding: 24px;
+}
+
+.demo-card-content h2 {
+    margin-bottom: 8px;
+}
+
+.demo-card-content p {
+    color: var(--color-muted);
+}
+
+.demo-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 20px;
+    list-style: none;
+}
+
+.demo-card-tags li {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    font-size: var(--font-sm);
+}
+
+/* ===== CSS Day 3: Hero section ===== */
+.hero-demo-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-demo {
+    position: relative;
+    display: grid;
+    flex: 1;
+    min-height: 100vh;
+    place-items: center;
+    padding: 48px 20px;
+    background-image:
+        linear-gradient(rgb(10 25 43 / 68%), rgb(10 25 43 / 68%)),
+        url("images/stephan-bechert%20unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+    color: var(--color-surface);
+    text-align: center;
+}
+
+.hero-demo-content {
+    width: min(100%, 760px);
+}
+
+.hero-demo-kicker {
+    margin-bottom: 12px;
+    color: #fbd19d;
+    font-size: var(--font-sm);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero-demo h1 {
+    color: var(--color-surface);
+    font-size: clamp(2.25rem, 8vw, 4.5rem);
+}
+
+.hero-demo-content > p:not(.hero-demo-kicker) {
+    max-width: 620px;
+    margin: 0 auto 24px;
+    font-size: clamp(1rem, 2.5vw, var(--font-lg));
+}
+
+/* ===== CSS Day 4: Form styling ===== */
+.contact-form-panel input:not([type="checkbox"]),
+.contact-form-panel select,
+.contact-form-panel textarea {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.contact-form-panel input:not([type="checkbox"]):focus,
+.contact-form-panel select:focus,
+.contact-form-panel textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgb(29 78 137 / 15%);
+}
+
+.contact-form-panel input:invalid:not(:placeholder-shown),
+.contact-form-panel textarea:invalid:not(:placeholder-shown) {
+    border-color: #b42318;
+    background-color: #fff8f7;
+}
+
+.contact-form-panel input:invalid:not(:placeholder-shown):focus,
+.contact-form-panel textarea:invalid:not(:placeholder-shown):focus {
+    box-shadow: 0 0 0 3px rgb(180 35 24 / 15%);
+}
+
+.contact-form-panel input:valid:not(:placeholder-shown),
+.contact-form-panel textarea:valid:not(:placeholder-shown) {
+    border-color: #16803c;
+}
+
+/* ===== CSS Day 5: Footer design ===== */
+.footer-demo-page {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.footer-demo-page .challenge-main {
+    flex: 1;
+}
+
+.challenge-footer {
+    padding: 32px 16px 16px;
+    background-color: var(--color-primary-dark);
+    color: var(--color-surface);
+}
+
+.challenge-footer-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: min(100%, 1100px);
+    margin: 0 auto;
+}
+
+.challenge-footer h2 {
+    margin-bottom: 12px;
+    color: var(--color-surface);
+    font-size: var(--font-xl);
+}
+
+.challenge-footer p {
+    margin-bottom: 0;
+}
+
+.challenge-footer ul {
+    display: grid;
+    gap: 8px;
+    list-style: none;
+}
+
+.challenge-footer a {
+    color: var(--color-surface);
+}
+
+.challenge-footer a:hover {
+    color: #fbd19d;
+}
+
+.footer-social-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-social-list span {
+    display: inline-grid;
+    width: 24px;
+    height: 24px;
+    place-items: center;
+    border: 1px solid rgb(255 255 255 / 55%);
+    border-radius: 50%;
+}
+
+.challenge-copyright {
+    width: min(100%, 1100px);
+    margin: 28px auto 0;
+    padding-top: 16px;
+    border-top: 1px solid rgb(255 255 255 / 30%);
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .challenge-footer-columns {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .challenge-footer-columns {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .demo-button,
+    .demo-card,
+    .contact-form-panel input,
+    .contact-form-panel select,
+    .contact-form-panel textarea {
+        transition-duration: 0.01ms;
+    }
+}
