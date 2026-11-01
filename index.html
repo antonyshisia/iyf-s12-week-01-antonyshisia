@@ -7,13 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="about.html">About</a> |
-        <a href="contact.html">Contact</a> |
-        <a href="projects.html">Projects</a>
-    </nav>
-    <main>
+    <header class="site-header">
+        <div class="nav-container">
+            <a class="logo" href="index.html">Antony Shisia</a>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="day-4-gallery.html">Projects</a></li>
+                    <li><a href="day-3-contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="page-container">
         <article class="card">
             <img
                 src="antony.png"
@@ -25,6 +32,27 @@
             </p>
             <a class="card-button" href="mailto:antonyshioni03@gmail.com">Contact me</a>
         </article>
+
+        <section class="card-section" aria-labelledby="explore-title">
+            <h2 id="explore-title">Explore</h2>
+            <div class="card-row">
+                <article class="card">
+                    <h3>About Me</h3>
+                    <p>Learn about my experience in logistics, office management, and community work.</p>
+                    <a class="card-button" href="about.html">Read about me</a>
+                </article>
+                <article class="card">
+                    <h3>Projects</h3>
+                    <p>Browse a collection of photographs and creative work.</p>
+                    <a class="card-button" href="day-4-gallery.html">View projects</a>
+                </article>
+                <article class="card">
+                    <h3>Contact</h3>
+                    <p>Get in touch to ask a question or discuss working together.</p>
+                    <a class="card-button" href="day-3-contact.html">Get in touch</a>
+                </article>
+            </div>
+        </section>
 
         <h2>Hobbies and interests</h2>
         <ul>
@@ -45,5 +73,26 @@
             <a href="mailto:antonyshioni03@gmail.com">antonyshioni03@gmail.com</a>.
         </p>
     </main>
+    <footer class="site-footer">
+        <div class="footer-columns">
+            <section aria-labelledby="footer-about-title">
+                <h2 id="footer-about-title">About</h2>
+                <p>Logistics professional passionate about human rights, peace-building, and learning web development.</p>
+            </section>
+            <nav aria-labelledby="footer-links-title">
+                <h2 id="footer-links-title">Links</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="day-4-gallery.html">Projects</a></li>
+                </ul>
+            </nav>
+            <section aria-labelledby="footer-contact-title">
+                <h2 id="footer-contact-title">Contact</h2>
+                <p><a href="mailto:antonyshioni03@gmail.com">antonyshioni03@gmail.com</a></p>
+            </section>
+        </div>
+        <p class="copyright">&copy; 2026 Antony Shisia. All rights reserved.</p>
+    </footer>
 </body>
 </html>
