@@ -18,13 +18,29 @@
       --measure: 40rem;
     }
     body {
+      display: grid;
+      width: 100%;
+      min-height: 100vh;
       margin: 0;
+      grid-template-columns: minmax(0, 1fr) minmax(12rem, 16rem) minmax(0, var(--measure)) minmax(0, 1fr);
+      grid-template-areas:
+        "header header header header"
+        ". sidebar main ."
+        ". sidebar related ."
+        "footer footer footer footer";
+      column-gap: 2rem;
       background: var(--paper);
       color: var(--ink);
       font-family: "Segoe UI", system-ui, sans-serif;
       font-size: 1.05rem;
       line-height: 1.6;
     }
+    .site-header { grid-area: header; }
+    .sidebar { grid-area: sidebar; padding-top: 3rem; }
+    main { grid-area: main; min-width: 0; }
+    .related { grid-area: related; min-width: 0; }
+    .site-footer { grid-area: footer; }
+    .sidebar.wrap, main.wrap, .related.wrap { width: 100%; margin-inline: 0; }
     img { max-width: 100%; height: auto; }
     a { color: var(--accent); }
     a:hover { color: var(--accent-dark); }
@@ -62,7 +78,17 @@
     .site-header nav a { color: var(--ink); text-decoration: none; }
     .site-header nav a:hover, .site-header nav a[aria-current="page"] { color: var(--accent); }
     .site-header nav a[aria-current="page"] { box-shadow: inset 0 -2px 0 var(--accent); }
-    main { padding: 3rem 0 4.5rem; }
+    main { padding: 3rem 0 2rem; }
+    .sidebar section {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+    }
+    .sidebar h2 { margin: 0 0 0.75rem; font-size: 1.2rem; }
+    .sidebar ul { margin: 0; padding-left: 1.2rem; }
+    .sidebar li + li { margin-top: 0.45rem; }
+    .sidebar p { margin: 0; color: var(--muted); font-size: 0.95rem; }
     .kicker {
       margin: 0 0 0.45rem;
       color: var(--muted);
@@ -85,7 +111,7 @@
     .featured { margin: 0 0 1.6rem; }
     .featured img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--line); background: #e7e0d2; }
     figcaption { padding: 0.7rem 0.15rem 0; color: var(--muted); font-size: 0.95rem; }
-    .related { margin-top: 3.25rem; }
+    .related { margin: 0 0 3.25rem; }
     .related-list {
       list-style: none;
       display: grid;
@@ -112,6 +138,23 @@
       .related-list { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 640px) {
+      body {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+          "header"
+          "main"
+          "sidebar"
+          "related"
+          "footer";
+        column-gap: 0;
+      }
+      .sidebar { padding-top: 0; }
+      .sidebar.wrap, main.wrap, .related.wrap {
+        width: min(var(--max), calc(100% - 2.5rem));
+        margin-inline: auto;
+      }
+      .sidebar section { margin-bottom: 1rem; }
       main { padding-top: 2rem; }
       .site-header .wrap { flex-direction: column; align-items: flex-start; padding: 0.9rem 0; min-height: 0; }
       .related-list { grid-template-columns: 1fr; }
@@ -136,6 +179,21 @@
     </div>
   </header>
 
+  <aside class="sidebar wrap" aria-label="Magazine sidebar">
+    <section aria-labelledby="contents-title">
+      <h2 id="contents-title">In this story</h2>
+      <ul>
+        <li><a href="#what-stays">What stays on paper</a></li>
+        <li><a href="#page-that-closes">A page that can be closed</a></li>
+        <li><a href="#starting-tomorrow">Starting tomorrow</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="author-title">
+      <h2 id="author-title">About the author</h2>
+      <p>Amina Cole writes about creative routines, thoughtful tools, and everyday studio life.</p>
+    </section>
+  </aside>
+
   <main class="wrap">
     <article class="post">
       <header>
@@ -151,42 +209,43 @@
 
       <p>I keep a paper notebook to the left of the keyboard. It is not a second system and it is not a brand. It is the place where a sentence can stay unfinished without a cursor blinking at it.</p>
 
-      <h2>What stays on paper</h2>
+      <h2 id="what-stays">What stays on paper</h2>
       <p>Names of people I still owe a reply. A measurement I do not want to hunt for in a chat log. The ugly first version of a headline. Paper is patient with things that are not ready to be searched.</p>
       <p>I date the top corner and leave the rest of the page alone. If a note matters tomorrow, it is still there. If it does not, I have not built a folder structure around it.</p>
 
-      <h2>A page that can be closed</h2>
+      <h2 id="page-that-closes">A page that can be closed</h2>
       <p>A file is always a little bit open. A notebook shuts. At the end of the day I write one line at the top of the next page: the first thing tomorrow needs. Then I close the cover and leave the studio.</p>
       <p>That line is short on purpose. It has to be readable when I am half awake and the kettle is louder than the plan.</p>
 
-      <h2>Starting tomorrow</h2>
+      <h2 id="starting-tomorrow">Starting tomorrow</h2>
       <p>The line I wrote last night is still there in the morning, in the same handwriting, unedited by an autosave. That is the whole method. The screen can have the finished version. The notebook keeps the start.</p>
     </article>
 
-    <section class="related" aria-labelledby="related-title">
-      <h2 id="related-title">Related posts</h2>
-      <ul class="related-list">
-        <li>
-          <a href="day-1-five-tags.html">
-            <h3>A short field guide to quieter tags</h3>
-            <p>Eight elements that rarely make the first tutorial.</p>
-          </a>
-        </li>
-        <li>
-          <a href="day-4-gallery.html">
-            <h3>Six frames from the studio week</h3>
-            <p>Pier, desk, notebook, light, paper, and the March window.</p>
-          </a>
-        </li>
-        <li>
-          <a href="day-3-contact.html">
-            <h3>Where to find the studio</h3>
-            <p>The Pier Street address, the desk phone, and the public links.</p>
-          </a>
-        </li>
-      </ul>
-    </section>
   </main>
+
+  <section class="related wrap" aria-labelledby="related-title">
+    <h2 id="related-title">Related posts</h2>
+    <ul class="related-list">
+      <li>
+        <a href="day-1-five-tags.html">
+          <h3>A short field guide to quieter tags</h3>
+          <p>Eight elements that rarely make the first tutorial.</p>
+        </a>
+      </li>
+      <li>
+        <a href="day-4-gallery.html">
+          <h3>Six frames from the studio week</h3>
+          <p>Pier, desk, notebook, light, paper, and the March window.</p>
+        </a>
+      </li>
+      <li>
+        <a href="day-3-contact.html">
+          <h3>Where to find the studio</h3>
+          <p>The Pier Street address, the desk phone, and the public links.</p>
+        </a>
+      </li>
+    </ul>
+  </section>
 
   <footer class="site-footer">
     <div class="wrap">

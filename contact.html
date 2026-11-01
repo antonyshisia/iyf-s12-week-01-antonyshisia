@@ -4,15 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main>
+    <header class="site-header">
+        <div class="nav-container">
+            <a class="logo" href="index.html">Antony Shisia</a>
+            <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Toggle navigation menu" aria-controls="main-navigation">
+            <label class="nav-toggle-label" for="nav-toggle" aria-hidden="true">
+                <span></span><span></span><span></span>
+            </label>
+            <nav class="primary-nav" id="main-navigation" aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html" aria-current="page">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="page-container">
         <h1>Contact Me</h1>
         <p>Fields marked with <span aria-hidden="true">*</span> are required.</p>
 
-        <!-- Replace YOUR_FORM_ID with the ID from your Formspree form endpoint -->
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="contact-layout">
+            <section class="contact-form-panel" aria-label="Contact form">
+                <!-- Replace YOUR_FORM_ID with the ID from your Formspree form endpoint -->
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 
             <fieldset>
                 <legend>Your Details</legend>
@@ -91,7 +110,41 @@
                 <button type="submit">Send Message</button>
             </p>
 
-        </form>
+                </form>
+            </section>
+            <aside class="contact-sidebar">
+                <h2>Get in touch</h2>
+                <p>Have a question or want to discuss a project? Send a message using the form, or email me directly.</p>
+                <p><a href="mailto:antonyshioni03@gmail.com">antonyshioni03@gmail.com</a></p>
+                <h3>Areas of interest</h3>
+                <ul>
+                    <li>Logistics and supply chain</li>
+                    <li>Human rights advocacy</li>
+                    <li>Peace-building and community work</li>
+                </ul>
+            </aside>
+        </div>
     </main>
+    <footer class="site-footer">
+        <div class="footer-columns">
+            <section aria-labelledby="footer-about-title">
+                <h2 id="footer-about-title">About</h2>
+                <p>Logistics professional passionate about human rights, peace-building, and learning web development.</p>
+            </section>
+            <nav aria-labelledby="footer-links-title">
+                <h2 id="footer-links-title">Links</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                </ul>
+            </nav>
+            <section aria-labelledby="footer-contact-title">
+                <h2 id="footer-contact-title">Contact</h2>
+                <p><a href="mailto:antonyshioni03@gmail.com">antonyshioni03@gmail.com</a></p>
+            </section>
+        </div>
+        <p class="copyright">&copy; 2026 Antony Shisia. All rights reserved.</p>
+    </footer>
 </body>
 </html>

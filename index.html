@@ -10,27 +10,30 @@
     <header class="site-header">
         <div class="nav-container">
             <a class="logo" href="index.html">Antony Shisia</a>
-            <nav aria-label="Main navigation">
+            <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Toggle navigation menu" aria-controls="main-navigation">
+            <label class="nav-toggle-label" for="nav-toggle" aria-hidden="true">
+                <span></span><span></span><span></span>
+            </label>
+            <nav class="primary-nav" id="main-navigation" aria-label="Main navigation">
                 <ul class="nav-links">
                     <li><a href="index.html" aria-current="page">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="day-4-gallery.html">Projects</a></li>
-                    <li><a href="day-3-contact.html">Contact</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <main class="page-container">
-        <article class="card">
-            <img
-                src="antony.png"
-                alt="Photo of Antony Shisia"
-                width="400">
-            <h1>Antony Shisia</h1>
-            <p>
-                I work in logistics and supply chain management. I am passionate about human rights and peace-building. I am also learning to build websites.
-            </p>
-            <a class="card-button" href="mailto:antonyshioni03@gmail.com">Contact me</a>
+    <main class="page-container home-page">
+        <article class="card home-hero">
+            <img src="antony.png" alt="Photo of Antony Shisia" width="400">
+            <div class="home-hero-content">
+                <h1>Antony Shisia</h1>
+                <p>
+                    I work in logistics and supply chain management. I am passionate about human rights and peace-building. I am also learning to build websites.
+                </p>
+                <a class="card-button" href="contact.html">Contact me</a>
+            </div>
         </article>
 
         <section class="card-section" aria-labelledby="explore-title">
@@ -44,14 +47,56 @@
                 <article class="card">
                     <h3>Projects</h3>
                     <p>Browse a collection of photographs and creative work.</p>
-                    <a class="card-button" href="day-4-gallery.html">View projects</a>
+                    <a class="card-button" href="projects.html">View projects</a>
                 </article>
                 <article class="card">
                     <h3>Contact</h3>
                     <p>Get in touch to ask a question or discuss working together.</p>
-                    <a class="card-button" href="day-3-contact.html">Get in touch</a>
+                    <a class="card-button" href="contact.html">Get in touch</a>
                 </article>
             </div>
+        </section>
+
+        <section class="gallery-section" aria-labelledby="gallery-title">
+            <h2 id="gallery-title">Photo Gallery</h2>
+            <ul class="photo-gallery">
+                <li>
+                    <figure>
+                        <img src="images/alexanderschimmeck-unsplash.jpg" alt="Pier and blue water at sunset">
+                        <figcaption>Harbor pier at sunset</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="images/pixie.jpg" alt="Portrait in warm studio light">
+                        <figcaption>Studio portrait</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="images/jimmy%20unsplash.jpg" alt="Notebook and writing desk in natural light">
+                        <figcaption>Field notebook</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="images/stephan-bechert%20unsplash.jpg" alt="Lighthouse above the coast at dusk">
+                        <figcaption>Light on the coast</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="images/anthonydelanoix%20unsplash.jpg" alt="Paper and layered material samples">
+                        <figcaption>Paper samples</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="images/alexanderschimmeck-unsplash.jpg" alt="Harbor seen at dusk">
+                        <figcaption>Harbor after dark</figcaption>
+                    </figure>
+                </li>
+            </ul>
         </section>
 
         <h2>Hobbies and interests</h2>
@@ -84,7 +129,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="day-4-gallery.html">Projects</a></li>
+                    <li><a href="projects.html">Projects</a></li>
                 </ul>
             </nav>
             <section aria-labelledby="footer-contact-title">
