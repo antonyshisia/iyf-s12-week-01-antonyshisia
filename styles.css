@@ -81,17 +81,20 @@ a {
     color: var(--color-primary);
     text-decoration: underline;
     text-underline-offset: 3px;
-    transition: color 0.2s ease;
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--color-primary-dark);
+    color: var(--color-primary);
     text-decoration-color: var(--color-secondary);
 }
 
 a:focus-visible,
-button:focus-visible {
-    outline: 3px solid var(--color-secondary);
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }
 
@@ -142,6 +145,12 @@ button:focus-visible {
     border: 1px solid var(--color-primary-light);
     border-radius: 6px;
     cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-toggle-label:hover {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary-light);
 }
 
 .nav-toggle-label span {
@@ -152,7 +161,7 @@ button:focus-visible {
 }
 
 .nav-toggle:focus-visible + .nav-toggle-label {
-    outline: 3px solid var(--color-secondary);
+    outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }
 
@@ -190,7 +199,8 @@ button:focus-visible {
 
 /* ===== Buttons ===== */
 .btn,
-.card-button {
+.card-button,
+.contact-form-panel button {
     display: inline-block;
     padding: 10px 18px;
     border: 2px solid var(--color-primary);
@@ -202,11 +212,14 @@ button:focus-visible {
     font-weight: 500;
     text-decoration: none;
     cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .btn:hover,
-.card-button:hover {
+.card-button:hover,
+.contact-form-panel button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
     background-color: var(--color-primary-dark);
     border-color: var(--color-primary-dark);
     color: #fff;
@@ -235,6 +248,11 @@ button:focus-visible {
     border-top: 4px solid var(--color-secondary);
     border-radius: 8px;
     background-color: var(--color-surface);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
 }
 
 .card img {
@@ -434,6 +452,10 @@ button:focus-visible {
     min-height: 44px;
 }
 
+.contact-form-panel button:focus-visible {
+    outline-offset: 3px;
+}
+
 .contact-sidebar h2,
 .contact-sidebar h3 {
     font-size: var(--font-xl);
@@ -472,6 +494,10 @@ button:focus-visible {
 
 .site-footer a {
     color: var(--color-surface);
+}
+
+.site-footer a:hover {
+    color: var(--color-secondary);
 }
 
 .copyright {
@@ -591,6 +617,17 @@ button:focus-visible {
 
     .home-hero-content {
         padding: 48px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
     }
 }
 
